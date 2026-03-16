@@ -1,0 +1,273 @@
+# Instincts generated from https://github.com/yuezheng2006/happyclaw
+# Generated: 2026-03-16T08:20:44.145Z
+# Version: 2.0
+
+---
+id: happyclaw-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Commit Length
+
+## Action
+
+Keep commit messages concise (under 50 characters)
+
+## Evidence
+
+- Average commit message length: 42 chars
+- Based on 200 commits
+
+---
+id: happyclaw-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: happyclaw-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: happyclaw-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: happyclaw-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: middleware, routes
+
+---
+id: happyclaw-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: happyclaw-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: **/schema.*, **/types.ts
+
+---
+id: happyclaw-workflow-bug-report-feature-workflow
+trigger: "when doing bug report feature workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Workflow Bug Report Feature Workflow
+
+## Action
+
+Follow the bug-report-feature-workflow workflow:
+1. Edit or add src/routes/bug-report.ts to implement backend endpoints.
+2. Update src/schemas.ts for API validation.
+3. Modify src/web.ts for backend integration.
+4. Update or create web/src/components/common/BugReportDialog.tsx for frontend dialog.
+5. Edit web/src/components/layout/NavRail.tsx to add or update sidebar entry.
+6. Update web/src/components/settings/AboutSection.tsx for documentation or entry.
+7. Edit web/src/utils/toast.ts to enhance toast notifications.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/routes/bug-report.ts, src/schemas.ts, src/web.ts
+
+---
+id: happyclaw-workflow-streaming-agent-runner-fix-workflow
+trigger: "when doing streaming agent runner fix workflow"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Workflow Streaming Agent Runner Fix Workflow
+
+## Action
+
+Follow the streaming-agent-runner-fix-workflow workflow:
+1. Edit container/agent-runner/src/index.ts for runner logic.
+2. Modify src/group-queue.ts for queue/task management.
+3. Update src/index.ts for core streaming logic.
+4. Edit web/src/components/chat/StreamingDisplay.tsx for frontend streaming UI.
+5. Update web/src/stores/chat.ts for frontend state management.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: container/agent-runner/src/index.ts, src/group-queue.ts, src/index.ts
+
+---
+id: happyclaw-workflow-file-download-blob-fix-workflow
+trigger: "when doing file download blob fix workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Workflow File Download Blob Fix Workflow
+
+## Action
+
+Follow the file-download-blob-fix-workflow workflow:
+1. Edit web/src/components/chat/FilePanel.tsx for download logic.
+2. Modify web/src/components/chat/ShareImageDialog.tsx if image download is involved.
+3. Add or update web/src/utils/download.ts for unified download helpers.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: web/src/components/chat/FilePanel.tsx, web/src/components/chat/ShareImageDialog.tsx, web/src/utils/download.ts
+
+---
+id: happyclaw-workflow-mermaid-svg-xss-protection-workflow
+trigger: "when doing mermaid svg xss protection workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Workflow Mermaid Svg Xss Protection Workflow
+
+## Action
+
+Follow the mermaid-svg-xss-protection-workflow workflow:
+1. Edit web/src/components/chat/MermaidDiagram.tsx to add or update DOMPurify logic.
+2. Update web/package.json and web/package-lock.json to add/upgrade dependencies.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: web/src/components/chat/MermaidDiagram.tsx, web/package.json, web/package-lock.json
+
+---
+id: happyclaw-workflow-websocket-error-feedback-workflow
+trigger: "when doing websocket error feedback workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/happyclaw
+---
+
+# Happyclaw Workflow Websocket Error Feedback Workflow
+
+## Action
+
+Follow the websocket-error-feedback-workflow workflow:
+1. Edit src/types.ts to add new ws_error type.
+2. Update src/web.ts to send ws_error events.
+3. Modify web/src/components/chat/ChatView.tsx to display error feedback.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/types.ts, src/web.ts, web/src/components/chat/ChatView.tsx
+
